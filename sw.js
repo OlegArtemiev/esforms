@@ -1,1 +1,1 @@
-importScripts('https://push-notifications.esstage.com/service-worker.js');
+importScripts('https://push.esputnik.com/service-worker.js');
