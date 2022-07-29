@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parse widget draft</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">  
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+  <div class="result wrap-divs">
+    <div><label for="payload">appearance_revisions -> Payload</label>
+
+      <textarea id="payload" name="payload" rows="5" cols="33"></textarea>
+    </div>
+
+
+    <div> <button class="parse styled" type="button">
+        parse
+      </button></div>
+  </div>
+
+
+  <div class="result wrap-divs">
+    <div class="result-item"><label for="doc">document</label>
+
+      <textarea id="doc" name="doc" rows="5" cols="33"></textarea>
+    </div>
+
+    <div class="result-item">
+      <div><label for="sync">sync</label>
+
+        <textarea id="sync" name="sync" rows="5" cols="33"></textarea>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="scripts/parse-payload.js"></script>
+</body>
+
+</html>
