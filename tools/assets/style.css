@@ -60,3 +60,10 @@ label {
 .result-item {
   margin: 5px;
 }
+
+.result-email {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}

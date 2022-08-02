@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+  <title>Timestamp email</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">  
+</head>
+
+<body>
+  <div class="wrap-divs">
+    <div class="horizont-items">
+      <!-- <label for="prefix">Prefix</label> -->
+      <input type="text" id="prefix" name="prefix" size="10" placeholder="prefix" value="u">
+      <!-- <label for="timestamp">Timestamp</label> -->
+      <input type="text" id="timestamp" name="timestamp" size="20" placeholder="timestamp" value="20220802_115120">
+      <input type="text" id="domain" name="domain" size="10" placeholder="@qa.team" value="@qa.team">
+      <button class="refresh">refresh timestamp</button>
+      <button class="copy">copy</button>
+      <button class="open">open inbox</button>
+    </div>
+
+    <div class="result-email">
+  
+    </div>
+
+
+
+
+  </div>
+  <script src="./generate-timestamp-email.js"></script>
+</body>
+
+</html>
