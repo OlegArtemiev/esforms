@@ -1,0 +1,11 @@
+div {
+  align-items: center;
+}
+
+input,
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  width: 200px;
+}
