@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the spring equinox</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #timer {
+            width: 100%;
+            height: 100%;
+            background-color: #39415C;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+    justify-content: center;
+    align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timer"></div>
+    <script>
+        !function (t, e, c, n) {
+            var s = e.createElement(c);
+            s.async = 1, s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
+            var r = e.scripts[0];
+            r.parentNode.insertBefore(s, r);
+            var f = function () {
+                f.c(arguments);
+            };
+            f.q = [];
+            f.c = function () {
+                f.q.push(arguments);
+            };
+            t['claspo'] = t['claspo'] || f;
+        }(window, document, 'script', '9158A8EBF4904261BD05914DACF6FDEE');
+    </script>
+    <script>claspo('init');</script>
+</body>
+
+</html>
