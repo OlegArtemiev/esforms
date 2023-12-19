@@ -1,76 +1,122 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Re-define session. Page 2</title>
     <style>
-        .scroll-box {
-            width: 300px;
-            height: 200px;
-            overflow: scroll;
-            border: 1px solid black;
+        #floatingTimePanel {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: lightgrey;
             padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
         }
+
+        h2 {
+            color: rgb(226, 144, 43);
+        }
+
         .clickable-item {
+            height: 50px;
             margin: 10px;
             padding: 10px;
             background-color: rgb(31, 144, 99);
             border: 1px solid black;
             cursor: pointer;
-            color: rgb(255, 255, 255);
+            color: rgb(9, 11, 9);
         }
+
         .off {
-            background-color: red; 
+            background-color: red;
+        }
+        #currentDateTime, #lastActivityDate {
+            font-weight: 700;
         }
     </style>
 </head>
+
 <body>
+    <div class="nav">
+        <ul>
+            <li><a href="re-define-session-1.html">re-define-session-1</a></li>
+        </ul>
+    </div>
+    <div id="floatingTimePanel">
+        <div><span id="currentDateTime"></span> <span> Current Date and Time</span></div>
+        <div><span id="lastActivityDate"></span> <span> Last Active Date</span></div>
+    </div>
+    <h2>Re-define session. Page 2</h2>
+    <div class="scroll-box">
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+        <div class="clickable-item" onclick="toggleText(this)">on</div>
+    </div>
 
-<h2>Re-define session. Page 2</h2>
+    <script>
 
-<div class="scroll-box">
-    
-    <div class="clickable-item" onclick="toggleText(this)">on</div>
-    <div class="clickable-item" onclick="toggleText(this)">on</div>
-    <div class="clickable-item" onclick="toggleText(this)">on</div>
-    <div class="clickable-item" onclick="toggleText(this)">on</div>
-    <div class="clickable-item" onclick="toggleText(this)">on</div>
-    <div class="clickable-item" onclick="toggleText(this)">on</div>
-</div>
-<div class="nav">
-    <ul>
-      <li><a href="re-define-session-1.html">re-define-session-1</a></li>
-    
-    </ul>
-  </div>
-
-<script>
-    function toggleText(element) {
-        if (element.textContent === 'on') {
-            element.textContent = 'off';
-            element.classList.add('off');
-        } else {
-            element.textContent = 'on';
-            element.classList.remove('off');
+        function getCurrentDateTime() {
+            var currentDateTime = new Date();
+            var formattedDateTime = currentDateTime.toLocaleString();
+            return formattedDateTime;
         }
-    }
-</script>
-<script src="../../js/master.js"></script>
-<script>
-    !function (t, e, c, n) {
-        var s = e.createElement(c);
-        s.async = 1, s.src = 'https://scripts.claspo.tech/scripts/' + n + '.js';
-        var r = e.scripts[0];
-        r.parentNode.insertBefore(s, r);
-        var f = function () {
-            f.c(arguments);
-        };
-        f.q = [];
-        f.c = function () {
-            f.q.push(arguments);
-        };
-        t['claspo'] = t['claspo'] || f;
-    }(window, document, 'script', '64C3985DA4DC438C829ECB12D7016ABB');
-</script><script>claspo('init');</script>
+        function updateCurrentDateTime() {
+            document.getElementById('currentDateTime').textContent = getCurrentDateTime();
+        }
+        updateCurrentDateTime();
+        setInterval(updateCurrentDateTime, 300);
+        function updateLastActivityDate() {
+            document.getElementById('lastActivityDate').textContent = getCurrentDateTime();
+        }
+
+        window.onload = updateLastActivityDate;
+        window.onscroll = updateLastActivityDate;
+        function toggleText(element) {
+            if (element.textContent === 'on') {
+                element.textContent = 'off';
+                element.classList.add('off');
+                updateLastActivityDate();
+            } else {
+                element.textContent = 'on';
+                element.classList.remove('off');
+                updateLastActivityDate();
+            }
+        }
+    </script>
+    <script src="../../js/master.js"></script>
+
+    <script>
+
+    </script>
+    <script>
+        !function (t, e, c, n) {
+            var s = e.createElement(c);
+            s.async = 1, s.src = 'https://scripts.claspo.tech/scripts/' + n + '.js';
+            var r = e.scripts[0];
+            r.parentNode.insertBefore(s, r);
+            var f = function () {
+                f.c(arguments);
+            };
+            f.q = [];
+            f.c = function () {
+                f.q.push(arguments);
+            };
+            t['claspo'] = t['claspo'] || f;
+        }(window, document, 'script', '64C3985DA4DC438C829ECB12D7016ABB');
+    </script>
+    <script>claspo('init');</script>
 
 </body>
+
 </html>
