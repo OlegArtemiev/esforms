@@ -33,7 +33,9 @@
         .off {
             background-color: red;
         }
-        #currentDateTime, #lastActivityDate {
+
+        #currentDateTime,
+        #lastActivityDate {
             font-weight: 700;
         }
 
@@ -49,9 +51,9 @@
 
             .clickable-item {
                 font-size: 20px;
-                
+
+            }
         }
-    }
     </style>
 </head>
 
@@ -64,6 +66,7 @@
     <div id="floatingTimePanel">
         <div><span id="currentDateTime"></span> <span> Current Date and Time</span></div>
         <div><span id="lastActivityDate"></span> <span> Last Active Date</span></div>
+        <div><span id="timeDifference"></span> <span> Time Difference</span></div>
     </div>
     <h2>Re-define session. Page 2</h2>
     <div class="scroll-box">
@@ -110,6 +113,17 @@
                 updateLastActivityDate();
             }
         }
+        function updateTimeDifference() {
+            var currentTime = new Date();
+            var lastActivityTime = new Date(document.getElementById('lastActivityDate').textContent);
+            var timeDiff = currentTime - lastActivityTime;
+            var seconds = Math.floor(timeDiff / 1000);
+            document.getElementById('timeDifference').textContent = `${seconds} seconds`;
+        }
+        updateTimeDifference();
+        setInterval(updateTimeDifference, 1000);
+
+
     </script>
     <script src="../../js/master.js"></script>
 
