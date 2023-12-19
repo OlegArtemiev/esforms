@@ -3,6 +3,7 @@
 
 <head>
     <title>Re-define session. Page 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         #floatingTimePanel {
             position: fixed;
@@ -20,7 +21,7 @@
         }
 
         .clickable-item {
-            height: 50px;
+            height: auto;
             margin: 10px;
             padding: 10px;
             background-color: rgb(31, 144, 99);
@@ -32,9 +33,27 @@
         .off {
             background-color: red;
         }
-        #currentDateTime, #lastActivityDate {
+
+        #currentDateTime,
+        #lastActivityDate {
             font-weight: 700;
         }
+
+        @media only screen and (max-width: 600px) {
+            h2 {
+                font-size: 24px;
+            }
+
+            #floatingTimePanel {
+                right: 5px;
+                bottom: 40px;
+            }
+
+            .clickable-item {
+                font-size: 20px;
+                
+        }
+    }
     </style>
 </head>
 
