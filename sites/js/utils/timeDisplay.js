@@ -21,10 +21,15 @@ document.addEventListener("DOMContentLoaded", function() {
     timerDiv.innerHTML = "Time since page loaded: 0 seconds";
     floatingWindow.appendChild(timerDiv);
 
-    // Create the pause button
-    var pauseButton = document.createElement("button");
-    pauseButton.innerHTML = "Pause Updates";
-    floatingWindow.appendChild(pauseButton);
+    // Create a button to capture the current time
+    var captureButton = document.createElement("button");
+    captureButton.innerHTML = "Capture Current Time";
+    floatingWindow.appendChild(captureButton);
+
+    // Create a div to display captured times
+    var capturedTimesDiv = document.createElement("div");
+    capturedTimesDiv.id = "capturedTimes";
+    floatingWindow.appendChild(capturedTimesDiv);
 
     // Add styles to the floating window
     var styles = `
@@ -37,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
             padding: 10px;
             z-index: 1000;
         }
-        #floatingWindow button {
-            margin-top: 5px;
+        #capturedTimes {
+            margin-top: 10px;
         }
     `;
     var styleSheet = document.createElement("style");
@@ -58,10 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var pageLoadTime = new Date();
     pageLoadTimeDiv.innerHTML = "Page Load Time: " + formatTime(pageLoadTime);
 
-    // Interval IDs for stopping the intervals
-    var currentTimeInterval;
-    var timerInterval;
-
     // Function to update current time
     function updateTime() {
         var now = new Date();
@@ -75,32 +76,15 @@ document.addEventListener("DOMContentLoaded", function() {
         timerDiv.innerHTML = "Time since page loaded: " + secondsSinceLoad + " seconds";
     }
 
-    // Start updating time
-    function startIntervals() {
-        currentTimeInterval = setInterval(updateTime, 1000);
-        timerInterval = setInterval(updateTimer, 1000);
-        pauseButton.innerHTML = "Pause Updates";
-    }
+    // Function to capture current time
+    captureButton.onclick = function() {
+        var now = new Date();
+        var capturedTime = document.createElement("div");
+        capturedTime.innerHTML = "Captured Time: " + formatTime(now);
+        capturedTimesDiv.appendChild(capturedTime);
+    };
 
-    // Stop updating time
-    function stopIntervals() {
-        clearInterval(currentTimeInterval);
-        clearInterval(timerInterval);
-        pauseButton.innerHTML = "Resume Updates";
-    }
-
-    // Toggle the intervals on button click
-    var isPaused = false;
-    pauseButton.addEventListener("click", function() {
-        if (isPaused) {
-            startIntervals();
-            isPaused = false;
-        } else {
-            stopIntervals();
-            isPaused = true;
-        }
-    });
-
-    // Initialize the intervals
-    startIntervals();
+    // Update time every second
+    setInterval(updateTime, 1000);
+    setInterval(updateTimer, 1000);
 });
