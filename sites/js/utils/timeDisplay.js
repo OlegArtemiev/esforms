@@ -85,6 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     // Update time every second
-    setInterval(updateTime, 1000);
-    setInterval(updateTimer, 1000);
+    setInterval(updateTime, 500);
+    setInterval(updateTimer, 500);
 });
