@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Cookiebot Script -->
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d508bd0b-013a-461e-b211-0f211027025b" data-blockingmode="auto" type="text/javascript"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookiebot and Claspo Integration</title>
 </head>
 <body>
 
-<!-- Cookiebot Script -->
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d508bd0b-013a-461e-b211-0f211027025b" data-blockingmode="auto" type="text/javascript"></script>
 
-<!-- Claspo Initialization Function -->
+<!-- Claspo -->
 <script>
-    function initClaspo() {
-        !function (t, e, c, n) {
-            var s = e.createElement(c);
-            s.async = 1, s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
-            var r = e.scripts[0];
-            r.parentNode.insertBefore(s, r);
-            var f = function () {
-                f.c(arguments);
-            };
-            f.q = [];
-            f.c = function () {
-                f.q.push(arguments);
-            };
-            t['claspo'] = t['claspo'] || f;
-        }(window, document, 'script', '24A54C9ACC1D45C5AAB34A119921E073');
-        claspo('init');
-    }
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1;
+        s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
+        var r = e.getElementsByTagName('script')[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', '24A54C9ACC1D45C5AAB34A119921E073');
+   
+</script>
 
-    // Event listener for CookiebotOnConsentReady
+<script>
     window.addEventListener('CookiebotOnConsentReady', function() {
-        if (window.CookieConsent && CookieConsent.consent && CookieConsent.consent.given) {
-            initClaspo();
-        }
+        console.log("Cookiebot consent is ready.");
+        claspo('init');
     });
 </script>
 
