@@ -13,7 +13,14 @@
 
 <!-- Claspo -->
 <script>
-    !function (t, e, c, n) {
+
+   
+</script>
+
+<script>
+    window.addEventListener('CookiebotOnConsentReady', function() {
+        console.log("Cookiebot consent is ready.");
+        !function (t, e, c, n) {
         var s = e.createElement(c);
         s.async = 1;
         s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
@@ -28,12 +35,6 @@
         };
         t['claspo'] = t['claspo'] || f;
     }(window, document, 'script', '24A54C9ACC1D45C5AAB34A119921E073');
-   
-</script>
-
-<script>
-    window.addEventListener('CookiebotOnConsentReady', function() {
-        console.log("Cookiebot consent is ready.");
         claspo('init');
     });
 </script>
