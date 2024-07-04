@@ -2,6 +2,37 @@
 <html lang="uk">
 
 <head>
+  <!-- Cookiebot Script gpt -->
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d508bd0b-013a-461e-b211-0f211027025b" data-blockingmode="auto" type="text/javascript"></script>
+
+<!-- Claspo Initialization Function -->
+<script>
+    function initClaspo() {
+        !function (t, e, c, n) {
+            var s = e.createElement(c);
+            s.async = 1, s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
+            var r = e.scripts[0];
+            r.parentNode.insertBefore(s, r);
+            var f = function () {
+                f.c(arguments);
+            };
+            f.q = [];
+            f.c = function () {
+                f.q.push(arguments);
+            };
+            t['claspo'] = t['claspo'] || f;
+        }(window, document, 'script', '24A54C9ACC1D45C5AAB34A119921E073');
+        claspo('init');
+    }
+
+    // Event listener for CookiebotOnConsentReady
+    window.addEventListener('CookiebotOnConsentReady', function() {
+        if (window.CookieConsent && CookieConsent.consent && CookieConsent.consent.given) {
+            initClaspo();
+        }
+    });
+</script>
+
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
@@ -79,7 +110,7 @@
 </script>
 
 
-<script>
+<!-- <script>
   !function (t, e, c, n) {
       var s = e.createElement(c);
       s.async = 1, s.src = 'https://scripts.claspo.tech/scripts/' + n + '.js';
@@ -94,7 +125,7 @@
       };
       t['claspo'] = t['claspo'] || f;
   }(window, document, 'script', '5FF71B15C47A4761A0FFEED9037F6B1F');
-</script><script>claspo('init');</script>
+</script><script>claspo('init');</script> -->
 <script src="../../js/master.js"></script>
 
 </body>
