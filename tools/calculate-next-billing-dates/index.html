@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Next Billing Date Calculator</title>
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Next Billing Date Calculator</h1>
+    <p>Enter data in the following format:</p>
+    <pre>
+user_account_id    creation_date
+18183    2024-09-10 05:05:51.249 +0300
+18182    2024-09-10 05:03:06.803 +0300
+17815    2024-08-09 17:51:07.514 +0300
+    </pre>
+    <textarea id="inputData" rows="10" cols="80"></textarea><br><br>
+    <button onclick="processData()">Calculate Next Billing Dates</button>
+    <h2>Results:</h2>
+    <div id="results"></div>
+</body>
+</html>
