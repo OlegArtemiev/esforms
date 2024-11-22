@@ -82,7 +82,7 @@
     event: 'userData',
     page: 'index.html',
     userData: {
-      clContactId: localStorage.getItem('clContactId').replace(/"/g, '')
+      clContactId: (localStorage.getItem('clContactId') || '').replace(/"/g, '')
     }
   });
 </script>
