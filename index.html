@@ -2,16 +2,7 @@
 <html lang="en">
 
 <head>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'userData',
-      page: 'index.html',
-      userData: {
-        clContactId: localStorage.getItem('clContactId').replace(/"/g, '')
-      }
-    });
-  </script>
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-86XGDLTFSP"></script>
 <script>
@@ -85,7 +76,16 @@
   </div>
 
 <div><h2><a href="tools/menu.html">Tools</a></h2></div>
-
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'userData',
+    page: 'index.html',
+    userData: {
+      clContactId: localStorage.getItem('clContactId').replace(/"/g, '')
+    }
+  });
+</script>
 </body>
 
 </html>
