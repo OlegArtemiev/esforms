@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-86XGDLTFSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-86XGDLTFSP');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
@@ -58,5 +67,35 @@
             <li><a href="../index.html">Home</a></li>
         </ul>
     </div>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+ event: 'purchase',
+ ecommerce: {
+   transaction_id: 'T_12345',
+   affiliation: 'Google Merchandise Store',
+   value: 25.42,
+   tax: 4.90,
+   shipping: 5.99,
+   currency: 'USD',
+   coupon: 'SUMMER_SALE',
+   items: [
+    {
+     item_id: 'SKU_12345',
+     item_name: 'Stan and Friends Tee',
+     item_category: 'Apparel',
+     price: 9.99,
+     quantity: 1
+    },
+    {
+     item_id: 'SKU_12346',
+     item_name: "Google Grey Women's Tee",
+     item_category: 'Apparel',
+     price: 20.99,
+     quantity: 1
+    }]
+   }
+ });
+    </script>
 </body>
 </html>
