@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claspo z-index Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        .overlay {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 300px;
+            height: 200px;
+            background: rgba(255, 0, 0, 0.8);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            cursor: grab;
+        }
+        .overlay2 {
+            position: absolute;
+            top: 150px;
+            left: 200px;
+            width: 300px;
+            height: 200px;
+            background: rgba(0, 0, 255, 0.8);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <label>z-index for red box: <input type="number" id="zIndex1" value="1000" onkeypress="handleKeyPress(event, 'draggable', 'zIndex1')"></label>
+        <button onclick="updateZIndex('draggable', 'zIndex1')">Apply</button>
+        <label>z-index for blue box: <input type="number" id="zIndex2" value="999" onkeypress="handleKeyPress(event, 'draggable2', 'zIndex2')"></label>
+        <button onclick="updateZIndex('draggable2', 'zIndex2')">Apply</button>
+    </div>
+    
+    <div class="overlay" id="draggable">z-index: 1000</div>
+    <div class="overlay2" id="draggable2">z-index: 999</div>
+    
+    <script>
+        function updateZIndex(elementId, inputId) {
+            var element = document.getElementById(elementId);
+            var newZIndex = document.getElementById(inputId).value;
+            element.style.zIndex = newZIndex;
+            element.textContent = "z-index: " + newZIndex;
+        }
+        
+        function handleKeyPress(event, elementId, inputId) {
+            if (event.key === "Enter") {
+                updateZIndex(elementId, inputId);
+            }
+        }
+
+        // Drag functionality
+        function makeDraggable(elementId) {
+            var dragItem = document.getElementById(elementId);
+            var active = false;
+            var currentX, currentY, initialX, initialY;
+            
+            dragItem.addEventListener("mousedown", function(e) {
+                active = true;
+                initialX = e.clientX - dragItem.offsetLeft;
+                initialY = e.clientY - dragItem.offsetTop;
+                document.addEventListener("mousemove", move);
+                document.addEventListener("mouseup", stop);
+            });
+            
+            function move(e) {
+                if (active) {
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    dragItem.style.left = currentX + "px";
+                    dragItem.style.top = currentY + "px";
+                }
+            }
+            
+            function stop() {
+                active = false;
+                document.removeEventListener("mousemove", move);
+                document.removeEventListener("mouseup", stop);
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            makeDraggable("draggable");
+            makeDraggable("draggable2");
+        });
+    </script>
+
+<script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.tech/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', '00720CB0E003416683DDBEE1060D0022');
+</script><script>claspo('init');</script>
+</body>
+</html>
