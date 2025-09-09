@@ -63,32 +63,29 @@ function handleConfigData(config) {
     let product = 'Not specified';
     let environment = 'Not specified';
     
-    if (config.apiConfig && config.apiConfig.hostUrl) {
-        switch (config.apiConfig.hostUrl) {
-            case 'https://script.claspo.io/':
-                product = 'Claspo';
-                environment = 'Prod';
-                break;
-            case 'https://script.claspo.tech/':
-                product = 'Claspo';
-                environment = 'Stage';
-                break;
-            case 'https://statics.esputnik.com/':
-                product = 'eSputnik';
-                environment = 'Prod';
-                break;
-            case 'https://statics.esstage.com/':
-                product = 'eSputnik';
-                environment = 'Stage';
-                break;
+    if (config.apiConfig) {
+        const apiUrl = config.apiConfig.hostUrl || config.apiConfig.variantDataSourceUrl || '';
+        
+        if (apiUrl.includes('claspo.io')) {
+            product = 'Claspo';
+            environment = 'Prod';
+        } else if (apiUrl.includes('claspo.tech')) {
+            product = 'Claspo';
+            environment = 'Stage';
+        } else if (apiUrl.includes('esputnik.com')) {
+            product = 'eSputnik';
+            environment = 'Prod';
+        } else if (apiUrl.includes('esstage.com')) {
+            product = 'eSputnik';
+            environment = 'Stage';
         }
     }
     
     document.getElementById('scriptVersion').textContent = config.version || 'Not specified';
     document.getElementById('product').textContent = product;
     document.getElementById('environment').textContent = environment;
-    document.getElementById('account').textContent = config.accountId || 'Not specified';
-    document.getElementById('projectID').textContent = config.siteId || 'Not specified';
+    document.getElementById('account').textContent = config.accountId || config.orgId || 'Not specified';
+    document.getElementById('projectID').textContent = config.siteId || config.guid || 'Not specified';
 }
 
 waitForConfig();
