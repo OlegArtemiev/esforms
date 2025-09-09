@@ -49,32 +49,46 @@ createHtmlSkeleton();
 
 
 
-function waitForClConfig() {
-    if (window._clConfig) {
-        console.log("Found _clConfig:", window._clConfig);
-        handleClConfigData(window._clConfig);
+function waitForConfig() {
+    const config = window._clConfig || window._esConfig;
+    if (config) {
+        console.log("Found config:", config);
+        handleConfigData(config);
     } else {
-        setTimeout(waitForClConfig, 100);
+        setTimeout(waitForConfig, 100);
     }
 }
 
-function handleClConfigData(clConfig) {
+function handleConfigData(config) {
     let product = 'Not specified';
     let environment = 'Not specified';
-    switch (clConfig.apiConfig.hostUrl) {
-        case 'https://script.claspo.io/':
-            product = 'Claspo';
-            environment = 'Prod';
-            break;
-        case 'https://script.claspo.tech/':
-            product = 'Claspo';
-            environment = 'Stage';
+    
+    if (config.apiConfig && config.apiConfig.hostUrl) {
+        switch (config.apiConfig.hostUrl) {
+            case 'https://script.claspo.io/':
+                product = 'Claspo';
+                environment = 'Prod';
+                break;
+            case 'https://script.claspo.tech/':
+                product = 'Claspo';
+                environment = 'Stage';
+                break;
+            case 'https://statics.esputnik.com/':
+                product = 'eSputnik';
+                environment = 'Prod';
+                break;
+            case 'https://statics.esstage.com/':
+                product = 'eSputnik';
+                environment = 'Stage';
+                break;
+        }
     }
-    document.getElementById('scriptVersion').textContent = clConfig.version || 'Not specified';
+    
+    document.getElementById('scriptVersion').textContent = config.version || 'Not specified';
     document.getElementById('product').textContent = product;
     document.getElementById('environment').textContent = environment;
-    document.getElementById('account').textContent = clConfig.accountId || 'Not specified';
-    document.getElementById('projectID').textContent = clConfig.siteId || 'Not specified';
+    document.getElementById('account').textContent = config.accountId || 'Not specified';
+    document.getElementById('projectID').textContent = config.siteId || 'Not specified';
 }
 
-waitForClConfig();
+waitForConfig();
