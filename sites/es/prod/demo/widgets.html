@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coffee Corner — Menu</title>
+    <meta name="description" content="Embed your online menu or table reservation widget here." />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Coffee Corner</a>
+        <nav class="nav" aria-label="Main">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="widgets.html">Menu</a>
+          <a class="nav-link" href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Menu</h1>
+      <p class="lead">Place your ordering or reservation scripts inside the blocks below.</p>
+
+      <section class="widget-block">
+        <header>
+          <h2>Online Menu</h2>
+          <p class="muted">A container ready for your menu script (drinks, pastries, prices).</p>
+        </header>
+        <!-- Insert your Online Menu widget here -->
+        <!-- Example: <script src="https://example.com/online-menu.js" data-target="widget-a"></script> -->
+        <div id="widget-a" class="widget-host" aria-live="polite"></div>
+      </section>
+
+      <section class="widget-block">
+        <header>
+          <h2>Table Reservation</h2>
+          <p class="muted">Another block ready for a reservation/booking script.</p>
+        </header>
+        <!-- Insert your Reservation widget here -->
+        <!-- Example: <script>loadWidgetScript('https://example.com/reservation.js', 'widget-b');</script> -->
+        <div id="widget-b" class="widget-host" aria-live="polite"></div>
+      </section>
+
+      <section class="widget-block">
+        <header>
+          <h2>Notes (optional)</h2>
+          <p class="muted">Keep brief integration notes or test data here.</p>
+        </header>
+        <pre class="code"><code><!-- Paste quick instructions or integration snippets here --></code></pre>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Coffee Corner</small>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
