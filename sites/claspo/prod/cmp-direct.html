@@ -8,15 +8,35 @@
 </head>
 <body>
     <div>cmp direct</div>
-  <script
-  async
-  type="text/plain"
-  class="cmplazyload"
-  data-cmp-purpose="c52"
-  data-cmp-vendor="c81564"
-  data-cmp-ab="2"
-  data-cmp-src="https://scripts.claspo.io/scripts/24A54C9ACC1D45C5AAB34A119921E073.js"
-></script>
+<!-- Optional stub (safe queue) -->
+<script type="text/plain"
+        class="cmplazyload"
+        data-cmp-purpose="c52"
+        data-cmp-vendor="c81564">
+  (function (w) {
+    var f = function () { (f.q = f.q || []).push(arguments); };
+    w.claspo = w.claspo || f;
+  })(window);
+</script>
+
+<!-- Main Claspo loader (runs only after consent) -->
+<script async
+        type="text/plain"
+        class="cmplazyload"
+        data-cmp-purpose="c52"
+        data-cmp-vendor="c81564"
+        data-cmp-ab="2"
+        data-cmp-src="https://scripts.claspo.io/scripts/24A54C9ACC1D45C5AAB34A119921E073.js">
+</script>
+
+<!-- Init only after consent -->
+<script type="text/plain"
+        class="cmplazyload"
+        data-cmp-purpose="c52"
+        data-cmp-vendor="c81564">
+  claspo('init');
+</script>
+
 
 </body>
 </html>
