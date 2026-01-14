@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide widget after conversion click - Page 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap');
+
+        :root {
+            --bg-top: #ffe6cf;
+            --bg-bottom: #fff4b8;
+            --accent: #f97316;
+            --accent-ink: #fffaf2;
+            --ink: #1f2937;
+            --muted: #475569;
+            --panel: rgba(255, 255, 255, 0.78);
+            --panel-border: rgba(249, 115, 22, 0.25);
+            --shadow: rgba(15, 23, 42, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 18% 18%, rgba(249, 115, 22, 0.25), transparent 45%),
+                radial-gradient(circle at 85% 20%, rgba(34, 211, 238, 0.2), transparent 40%),
+                linear-gradient(135deg, var(--bg-top), var(--bg-bottom));
+        }
+
+        main {
+            width: min(640px, 100%);
+            padding: 36px 40px;
+            border-radius: 28px;
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            box-shadow: 0 20px 40px var(--shadow);
+            backdrop-filter: blur(10px);
+            animation: float-in 700ms ease-out both;
+        }
+
+        .tag {
+            display: inline-flex;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(249, 115, 22, 0.12);
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        h1 {
+            margin: 18px 0 6px;
+            font-family: "Fraunces", "Times New Roman", serif;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            line-height: 1.1;
+        }
+
+        .page {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--muted);
+        }
+
+        .cta {
+            margin-top: 26px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--accent-ink);
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 12px 20px rgba(249, 115, 22, 0.35);
+            transition: transform 160ms ease, box-shadow 160ms ease;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 24px rgba(249, 115, 22, 0.35);
+        }
+
+        .cta:focus-visible {
+            outline: 3px solid rgba(249, 115, 22, 0.45);
+            outline-offset: 3px;
+        }
+
+        @keyframes float-in {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 28px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="tag">[display rules]</div>
+        <h1>Stop after conversion click</h1>
+        <p class="page">Page 1</p>
+        <a class="cta" href="hide-widget-after-conversion-click-p2.html">Go to page 2</a>
+    </main>
+
+    <script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.tech/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', '02F3EEA6237845F1BF8166A75D80D85D');
+</script><script>claspo('init');</script>
+<script src="../../js/master.js"></script>
+</body>
+</html>
