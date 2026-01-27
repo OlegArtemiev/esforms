@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #1e1a16;
+            --muted: #5a534b;
+            --paper: #f7f2eb;
+            --accent: #e46c39;
+            --accent-2: #2a8f9b;
+            --card: rgba(255, 255, 255, 0.78);
+            --shadow: 0 30px 80px rgba(22, 18, 12, 0.18);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Manrope", system-ui, -apple-system, sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(1200px 600px at 10% 0%, #ffe9d5 0%, rgba(255, 233, 213, 0) 60%),
+                radial-gradient(900px 500px at 90% 10%, #dff1f2 0%, rgba(223, 241, 242, 0) 55%),
+                linear-gradient(160deg, #f7f2eb 0%, #fffaf4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 64px 24px;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4), transparent 45%),
+                radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.3), transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.25), transparent 50%);
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        .page {
+            width: min(960px, 100%);
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 24px;
+        }
+        .hero {
+            display: grid;
+            gap: 16px;
+            padding: 32px 36px;
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(228, 108, 57, 0.12);
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            font-size: 0.9rem;
+        }
+        .badge span {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: inline-block;
+        }
+        h1 {
+            margin: 0;
+            font-family: "Fraunces", "Times New Roman", serif;
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            letter-spacing: -0.02em;
+        }
+        p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .btn {
+            border: none;
+            padding: 12px 22px;
+            border-radius: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn.primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 16px 30px rgba(228, 108, 57, 0.3);
+        }
+        .btn.ghost {
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid rgba(30, 26, 22, 0.2);
+        }
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+        .meta-card {
+            padding: 18px 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+        .meta-card strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .meta-card span {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        @media (max-width: 640px) {
+            .hero {
+                padding: 26px 22px;
+                border-radius: 22px;
+            }
+            .actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<main class="page">
+    <section class="hero">
+        <div class="badge"><span></span> scheduled with teaser</div>
+        <h1>A test page that feels like a tiny landing.</h1>
+        <p>Warm visuals with a clean, minimal layout.</p>
+        <div class="actions">
+            <button class="btn primary" type="button">Launch preview</button>
+            <button class="btn ghost" type="button">View states</button>
+        </div>
+    </section>
+    <section class="meta">
+        <div class="meta-card">
+            <strong>Stage</strong>
+            <span>Scheduled teaser</span>
+        </div>
+        <div class="meta-card">
+            <strong>Status</strong>
+            <span>Ready for QA</span>
+        </div>
+        <div class="meta-card">
+            <strong>Version</strong>
+            <span>v0.1</span>
+        </div>
+    </section>
+</main>
+   <script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.tech/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', '35B553DD064548E481C80DB0B501EA04');
+</script><script>claspo('init');</script>
+<script src="../../js/master.js"></script>
+</body>
+</html>
