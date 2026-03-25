@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Друга сторінка</title>
+  <style>
+    :root {
+      --bg: #e8f1ef;
+      --card: #f7fffd;
+      --text: #18302b;
+      --accent: #287a68;
+      --border: #cfe2dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #edf8f4 0%, #dceee7 100%);
+      color: var(--text);
+    }
+
+    .hero,
+    .section {
+      width: min(760px, calc(100% - 32px));
+      margin: 0 auto;
+      background: rgba(247, 255, 253, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(24, 48, 43, 0.08);
+    }
+
+    .hero {
+      margin-top: 32px;
+      padding: 48px 32px;
+    }
+
+    .section {
+      min-height: 85vh;
+      margin-top: 24px;
+      padding: 32px;
+    }
+
+    h1,
+    h2 {
+      margin-top: 0;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .nav-link {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Друга сторінка</h1>
+    <p>
+      Це друга проста HTML-сторінка. Вона теж має довгий контент, щоб працював
+      звичайний вертикальний скрол.
+    </p>
+    <a class="nav-link" href="index.html">Повернутися на першу сторінку</a>
+  </header>
+
+  <section class="section">
+    <h2>Блок 1</h2>
+    <p>
+      Тут просто демонстраційний текст. Посилання між сторінками працюють через
+      звичайні відносні шляхи, тому все залишилось максимально просто.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant
+      morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Блок 2</h2>
+    <p>
+      Друга сторінка має окремий фон і окремий заголовок, щоб було зручно бачити,
+      що перехід дійсно відбувся.
+    </p>
+    <p>
+      Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+      curae; Aliquam erat volutpat. Donec viverra, ligula at feugiat aliquet, dui orci
+      dapibus est, a aliquet nunc risus quis nisl.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Блок 3</h2>
+    <p>
+      Унизу теж є зворотне посилання, щоб можна було перейти назад без прокрутки догори.
+    </p>
+    <p>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+    </p>
+    <a class="nav-link" href="index.html">Назад на першу сторінку</a>
+  </section>
+  <script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', '70BA702722264F6A8E1D8609E5D40627');
+</script><script>claspo('init');</script>
+</body>
+</html>
