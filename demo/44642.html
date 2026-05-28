@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claspo Widget Test Page project: 44642</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f6f7f9;
+            --panel: #ffffff;
+            --text: #17202a;
+            --muted: #687385;
+            --line: #d8dee8;
+            --accent: #1f7a5c;
+            --accent-dark: #155840;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(8px);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            gap: 16px;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .brand {
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        main {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+
+        section {
+            margin-bottom: 72px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+            align-items: center;
+            gap: 40px;
+            min-height: 520px;
+        }
+
+        h1,
+        h2 {
+            margin: 0 0 16px;
+            line-height: 1.1;
+        }
+
+        h1 {
+            max-width: 760px;
+            font-size: clamp(42px, 7vw, 76px);
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 18px;
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            background: var(--accent);
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--accent-dark);
+        }
+
+        .preview {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            padding: 24px;
+            box-shadow: 0 16px 44px rgba(23, 32, 42, 0.08);
+        }
+
+        .preview-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .preview-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d0d7e2;
+        }
+
+        .preview-line {
+            height: 12px;
+            margin-bottom: 12px;
+            border-radius: 999px;
+            background: #e7ebf1;
+        }
+
+        .preview-line.short {
+            width: 58%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            min-height: 170px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            padding: 24px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .inline-target {
+            min-height: 220px;
+            border: 2px dashed #aeb8c7;
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 28px;
+        }
+
+        .inline-target code {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #eef2f6;
+            color: #2e4053;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 28px 24px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        @media (max-width: 820px) {
+            nav {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .hero,
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <a class="brand" href="#">Claspo Test Site</a>
+            <div class="links">
+                <a href="#content">Content</a>
+                <a href="#inline-widget">Inline target</a>
+                <a href="#footer">Footer</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="page-title">
+            <div>
+                <h1 id="page-title">Demo page for Claspo widgets project: 44642</h1>
+                <p>
+                    This page is intentionally simple and stable. Use it to check how
+                    Claspo popups, floating bars, launchers, teasers, and inline widgets
+                    appear on a real web page.
+                </p>
+                <div class="actions">
+                    <a class="button" href="#inline-widget">Open inline area</a>
+                    <a class="button secondary" href="#content">Scroll test</a>
+                </div>
+            </div>
+
+            <aside class="preview" aria-label="Page preview placeholder">
+                <div class="preview-bar" aria-hidden="true">
+                    <span class="preview-dot"></span>
+                    <span class="preview-dot"></span>
+                    <span class="preview-dot"></span>
+                </div>
+                <div class="preview-line"></div>
+                <div class="preview-line"></div>
+                <div class="preview-line short"></div>
+            </aside>
+        </section>
+
+        <section id="content" aria-labelledby="content-title">
+            <h2 id="content-title">Test content</h2>
+            <p>
+                The content below gives the page enough structure for scroll-based,
+                delay-based, and page-position display rules.
+            </p>
+            <div class="grid">
+                <article class="card">
+                    <strong>Popup check</strong>
+                    <p>Use this area to verify centered modal widgets and overlay behavior.</p>
+                </article>
+                <article class="card">
+                    <strong>Floating check</strong>
+                    <p>Scroll the page to check floating boxes, bars, launchers, and teasers.</p>
+                </article>
+                <article class="card">
+                    <strong>Form check</strong>
+                    <p>Submit a test form widget and verify lead or submission tracking.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="inline-widget" aria-labelledby="inline-title">
+            <h2 id="inline-title">Inline widget target</h2>
+            <div class="inline-target">
+                <p>
+                    Place an inline Claspo widget here when the widget configuration
+                    requires a target element on the page.
+                </p>
+                <code>id="inline-widget"</code>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        Claspo widget test page
+    </footer>
+<script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', '15E5C59E6856472AB0BD9EB9ED9683BA');
+</script><script>claspo('init');</script>
+</body>
+</html>
