@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple demo page for a Claspo widget.">
+    <title>Slow Sunday | Claspo Demo</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --plum: #4f294d;
+            --pink: #f1b8c7;
+            --cream: #fff7e7;
+            --yellow: #f3d66d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--plum);
+            background: var(--cream);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 28px 0;
+        }
+
+        .brand {
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .pill {
+            padding: 10px 16px;
+            border: 1px solid var(--plum);
+            border-radius: 999px;
+            color: var(--plum);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        main {
+            position: relative;
+            display: grid;
+            place-items: center;
+            min-height: calc(100vh - 88px);
+            padding: 60px 20px 110px;
+            text-align: center;
+        }
+
+        .sun {
+            position: absolute;
+            width: min(62vw, 720px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: var(--yellow);
+        }
+
+        .shape {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 48% 52% 62% 38% / 42% 39% 61% 58%;
+            background: var(--pink);
+            opacity: 0.8;
+        }
+
+        .shape-one {
+            top: 10%;
+            left: -90px;
+            transform: rotate(24deg);
+        }
+
+        .shape-two {
+            right: -80px;
+            bottom: 2%;
+            transform: rotate(-18deg) scale(1.3);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 880px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 9px 14px;
+            border-radius: 999px;
+            background: rgb(255 247 231 / 70%);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 22px 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(60px, 10vw, 126px);
+            font-weight: 400;
+            line-height: 0.9;
+            letter-spacing: -0.055em;
+        }
+
+        p {
+            max-width: 540px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.65;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .button {
+            padding: 14px 21px;
+            border: 1px solid var(--plum);
+            border-radius: 999px;
+            color: var(--plum);
+            background: transparent;
+            font-size: 14px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .button-primary {
+            color: var(--cream);
+            background: var(--plum);
+        }
+
+        @media (max-width: 640px) {
+            .sun {
+                width: 105vw;
+            }
+
+            h1 {
+                font-size: clamp(58px, 20vw, 88px);
+            }
+
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: min(260px, 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">Slow Sunday</div>
+            <a class="pill" href="#hello">Say hello</a>
+        </header>
+
+        <main>
+            <div class="sun" aria-hidden="true"></div>
+            <div class="shape shape-one" aria-hidden="true"></div>
+            <div class="shape shape-two" aria-hidden="true"></div>
+
+            <section class="content" id="hello">
+                <div class="eyebrow">Take your time</div>
+                <h1>Good days start slowly.</h1>
+                <p>
+                    Simple recipes, soft playlists, and thoughtful ideas
+                    for making more room in your weekend.
+                </p>
+                <div class="actions">
+                    <a class="button button-primary" href="#read">Start reading</a>
+                    <a class="button" href="#about">About the journal</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+<script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', '5B49DAAD91FA41B89A9BCFEE22A718DA');
+</script><script>claspo('init');</script>
+</body>
+</html>
