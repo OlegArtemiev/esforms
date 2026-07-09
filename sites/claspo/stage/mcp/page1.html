@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claspo Stage MCP - Page 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 32px;
+            line-height: 1.45;
+        }
+
+        .page-panel {
+            max-width: 640px;
+            padding: 20px;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        a.button-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+            padding: 0 14px;
+            border: 1px solid #0969da;
+            border-radius: 6px;
+            background: #0969da;
+            color: #ffffff;
+            font: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body data-page="page1">
+    <main class="page-panel">
+        <h1>Page 1</h1>
+
+        <p>Neutral page for adding a Claspo script.</p>
+
+        <div class="actions">
+            <a class="button-link" id="go-page-2" href="./page2.html">Go to Page 2</a>
+        </div>
+    </main>
+<script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.tech/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', 'BD217C12913141BD918A0374350FAFD5');
+</script><script>claspo('init');</script>
+    <script src="../../../js/master.js"></script>
+</body>
+</html>
