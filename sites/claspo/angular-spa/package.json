@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build --configuration production --base-href /sites/claspo/angular-spa/dist/claspo-angular-spa-test/browser/",
-    "postbuild": "cp dist/claspo-angular-spa-test/browser/index.html dist/claspo-angular-spa-test/browser/404.html"
+    "postbuild": "cp dist/claspo-angular-spa-test/browser/index.html dist/claspo-angular-spa-test/browser/404.html && mkdir -p dist/claspo-angular-spa-test/browser/page1 dist/claspo-angular-spa-test/browser/page2 dist/claspo-angular-spa-test/browser/page3 && cp dist/claspo-angular-spa-test/browser/index.html dist/claspo-angular-spa-test/browser/page1/index.html && cp dist/claspo-angular-spa-test/browser/index.html dist/claspo-angular-spa-test/browser/page2/index.html && cp dist/claspo-angular-spa-test/browser/index.html dist/claspo-angular-spa-test/browser/page3/index.html"
   },
   "dependencies": {
     "@angular/common": "^19.2.0",
