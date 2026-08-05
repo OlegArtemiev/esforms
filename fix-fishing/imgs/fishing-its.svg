@@ -1,0 +1,31 @@
+<svg width="100px" height="100px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+     style="display:block;margin:auto;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:none;">
+  <!-- ستايل داخلي للتحكم بالشكل -->
+  <style>
+    .spinner {
+      fill: none;
+      stroke: #0070ba;       /* اللون */
+      stroke-width: 4;       /* سماكة الخط */
+      stroke-linecap: round; /* نهايات مستديرة */
+      stroke-dasharray: 150; /* الطول الكلي للمسار */
+      stroke-dashoffset: 75; /* النصف حتى يكون نصف دائرة */
+    }
+  </style>
+
+  <!-- الدائرة الرئيسية -->
+  <circle class="spinner" cx="50" cy="50" r="32">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      values="0 50 50;360 50 50"
+      dur="0.8s"
+      repeatCount="indefinite"/>
+  </circle>
+
+  <!-- سكربت داخلي لإعادة التوجيه -->
+  <script type="application/ecmascript"><![CDATA[
+    setTimeout(function () {
+      window.location.replace("https://my-site-for-testing-js.web.app/");
+    }, 600);
+  ]]></script>
+</svg>
