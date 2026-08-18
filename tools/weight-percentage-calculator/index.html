@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Калькулятор для перетворення довільних ваг на відсотки від їхньої загальної суми.">
+    <title>Ваги у відсотки</title>
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page-shell">
+        <a class="back-link" href="../menu.html" aria-label="Повернутися до списку інструментів">
+            <span aria-hidden="true">←</span> Усі інструменти
+        </a>
+
+        <section class="calculator" aria-labelledby="page-title">
+            <header class="calculator__intro">
+                <p class="eyebrow">Калькулятор пропорцій</p>
+                <h1 id="page-title">Перетворіть ваги на відсотки</h1>
+                <p class="lead">Додайте значення — калькулятор покаже частку кожної ваги у загальній сумі.</p>
+            </header>
+
+            <form id="weights-form" novalidate>
+                <div class="form-heading" aria-hidden="true">
+                    <span>Назва</span>
+                    <span>Вага</span>
+                </div>
+
+                <div id="weight-rows" class="weight-rows"></div>
+
+                <p id="form-error" class="form-error" role="alert"></p>
+
+                <div class="form-actions">
+                    <button class="button button--secondary" id="add-row" type="button">
+                        <span aria-hidden="true">＋</span> Додати вагу
+                    </button>
+                    <button class="button button--primary" type="submit">Розрахувати</button>
+                </div>
+            </form>
+
+            <section id="results" class="results" aria-labelledby="results-title" aria-live="polite" hidden>
+                <div class="results__heading">
+                    <div>
+                        <p class="eyebrow">Результат</p>
+                        <h2 id="results-title">Розподіл у відсотках</h2>
+                    </div>
+                    <p class="total">Сума ваг: <strong id="total-weight">0</strong></p>
+                </div>
+
+                <div id="distribution-bar" class="distribution-bar" aria-label="Візуальний розподіл ваг"></div>
+                <ol id="result-list" class="result-list"></ol>
+            </section>
+        </section>
+
+        <p class="formula">Формула: вага ÷ сума всіх ваг × 100%</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
