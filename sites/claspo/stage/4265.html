@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claspo project 4265 — A/B Test Confidence</title>
+    <style>
+        body {
+            max-width: 760px;
+            margin: 48px auto;
+            padding: 0 24px;
+            font: 16px/1.5 system-ui, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Project 4265: A/B Test Confidence</h1>
+    <p>Use a dedicated URL for each isolated A/B test:</p>
+    <nav>
+        <a href="?abtest=1">Test 1: subscription vs subscription</a>
+        <a href="?abtest=2">Test 2: request vs subscription</a>
+        <a href="?abtest=3">Test 3: subscription vs informer</a>
+    </nav>
+
+    <script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.tech/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', 'C2E5513D752B4EEDA69FA5B6DE97411A');
+    </script>
+    <script>claspo('init');</script>
+    <script src="../../js/master.js"></script>
+</body>
+</html>
