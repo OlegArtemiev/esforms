@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project 46953 — Session B</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; color: #202430; max-width: 58rem; line-height: 1.55; }
+    nav, .controls { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.25rem 0; }
+    a { color: #2454bc; }
+    button, input { font: inherit; padding: .45rem .7rem; }
+    button { cursor: pointer; }
+    input { display: block; width: min(22rem, 90%); margin-top: .4rem; }
+    .scenario-links { columns: 2; padding-left: 1.5rem; }
+    .scenario-links li { margin-bottom: .5rem; }
+    .scroll-content { min-height: 2300px; padding-top: 2rem; background: linear-gradient(#f2f5fb, #fff); }
+    .scroll-content p { padding: 1rem; }
+    footer { padding: 2rem 0 5rem; }
+  </style>
+</head>
+<body data-testid="page-b">
+  <h1>Project 46953 — Session B</h1>
+  <nav data-project-pages data-testid="project-pages" aria-label="Project test pages">
+    <a data-testid="link-hub" href="/sites/claspo/prod/projects/project-46953.html">Hub</a>
+    <a data-testid="link-session-a" href="/sites/claspo/prod/projects/project-46953-session-a.html">Session A</a>
+    <a data-testid="link-session-b" href="/sites/claspo/prod/projects/project-46953-session-b.html" aria-current="page">Session B</a>
+    <a data-testid="link-away" href="/sites/claspo/prod/projects/project-46953-away.html">Away</a>
+  </nav>
+  <main>
+    <p>Scenario: <strong data-testid="scenario-status">default</strong></p>
+    <p>Use the page links for full navigation, or the route buttons to change the URL in this page.</p>
+    <section aria-label="Page activity">
+      <div class="controls">
+        <button type="button" data-testid="activity-button">Activity</button>
+        <span>Activity count: <output data-testid="activity-status" aria-live="polite">0</output></span>
+      </div>
+      <label for="session-input">Session note</label>
+      <input id="session-input" data-testid="session-input" type="text" autocomplete="off" placeholder="Type here">
+    </section>
+    <section aria-label="SPA navigation">
+      <div class="controls">
+        <button type="button" data-testid="spa-route-a" data-spa-route="route-a">SPA route A</button>
+        <button type="button" data-testid="spa-route-b" data-spa-route="route-b">SPA route B</button>
+      </div>
+      <p>Current route: <output data-testid="route-status" aria-live="polite">initial</output></p>
+    </section>
+    <section class="scroll-content" aria-label="Scroll area">
+      <h2>Scroll area</h2>
+      <p>Scroll down to the end of the page.</p>
+    </section>
+  </main>
+  <footer data-testid="scroll-end">End of page</footer>
+  <script>
+    (() => {
+      const current = new URL(window.location.href);
+      const scenario = current.searchParams.get('case') || 'default';
+      document.querySelector('[data-testid="scenario-status"]').textContent = scenario;
+      document.querySelectorAll('nav[data-project-pages] a').forEach(link => {
+        const destination = new URL(link.getAttribute('href'), window.location.origin);
+        if (current.searchParams.has('case')) destination.searchParams.set('case', scenario);
+        link.href = destination.pathname + destination.search;
+      });
+      const routeStatus = document.querySelector('[data-testid="route-status"]');
+      const renderRoute = () => {
+        const route = new URL(window.location.href).searchParams.get('route') || 'initial';
+        routeStatus.textContent = route;
+      };
+      document.querySelectorAll('[data-spa-route]').forEach(button => {
+        button.addEventListener('click', () => {
+          const destination = new URL(window.location.href);
+          destination.searchParams.set('route', button.dataset.spaRoute);
+          window.history.pushState({ route: button.dataset.spaRoute }, '', destination);
+          renderRoute();
+        });
+      });
+      window.addEventListener('popstate', renderRoute);
+      renderRoute();
+      let activity = 0;
+      document.querySelector('[data-testid="activity-button"]').addEventListener('click', () => {
+        document.querySelector('[data-testid="activity-status"]').textContent = String(++activity);
+      });
+    })();
+  </script>
+  <script>
+    !function (t, e, c, n) {
+        var s = e.createElement(c);
+        s.async = 1, s.src = 'https://scripts.claspo.io/scripts/' + n + '.js';
+        var r = e.scripts[0];
+        r.parentNode.insertBefore(s, r);
+        var f = function () {
+            f.c(arguments);
+        };
+        f.q = [];
+        f.c = function () {
+            f.q.push(arguments);
+        };
+        t['claspo'] = t['claspo'] || f;
+    }(window, document, 'script', '238E162260D045FBB7BA2336EEEBC447');
+  </script>
+  <script>claspo('init');</script>
+  <script src="/sites/js/master.js"></script>
+</body>
+</html>
