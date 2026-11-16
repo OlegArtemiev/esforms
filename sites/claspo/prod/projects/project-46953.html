@@ -79,13 +79,13 @@
       });
       const routeStatus = document.querySelector('[data-testid="route-status"]');
       const renderRoute = () => {
-        const route = new URL(window.location.href).searchParams.get('route') || 'initial';
+        const route = window.location.hash.slice(1) || 'initial';
         routeStatus.textContent = route;
       };
       document.querySelectorAll('[data-spa-route]').forEach(button => {
         button.addEventListener('click', () => {
           const destination = new URL(window.location.href);
-          destination.searchParams.set('route', button.dataset.spaRoute);
+          destination.hash = button.dataset.spaRoute;
           window.history.pushState({ route: button.dataset.spaRoute }, '', destination);
           renderRoute();
         });
